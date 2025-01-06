@@ -1,107 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Index</title>
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-    <h1>Task Index</h1>
-    <p>Click on the task below to open the corresponding HTML file:</p>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+    <h2 class="text-2xl font-bold mb-6 text-center">Survey Form</h2>
+    <form action="#" method="POST">
+      <!-- Name Field -->
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700">Name  <span class="text-red-500">*</span> </label>
+        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+      </div>
 
-    <ul class="task-list">
-        <li class="question">
-            <div class="task">
-                <span class="task-title">1 :: </span>
-                <span class="task-description">Fix the bugs in the below snippet.</span>
-                <a href="/Task6/Task1.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
+      <!-- Email Field -->
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-500">*</span> </label>
+        <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+      </div>
 
-        <li class="question">
-            <div class="task">
-                <span class="task-title">2 :: </span>
-                <span class="task-description">Try the below one.</span>
-                <a href="/Task6/Task2.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
+      <!-- Experience Field -->
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700">Your Experience <span class="text-red-500">*</span></label>
+        <div class="flex space-x-2 mt-2">
+          <!-- Star 5 -->
+          <input type="radio" name="experience" id="star-5" value="5" class="hidden peer" />
+          <label for="star-5" class="text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 peer-checked:text-yellow-400">
+            &#9733;
+          </label>
+          <!-- Star 4 -->
+          <input type="radio" name="experience" id="star-4" value="4" class="hidden peer" />
+          <label for="star-4" class="text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 peer-checked:text-yellow-400">
+            &#9733;
+          </label>
+          <!-- Star 3 -->
+          <input type="radio" name="experience" id="star-3" value="3" class="hidden peer" />
+          <label for="star-3" class="text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 peer-checked:text-yellow-400">
+            &#9733;
+          </label>
+          <!-- Star 2 -->
+          <input type="radio" name="experience" id="star-2" value="2" class="hidden peer" />
+          <label for="star-2" class="text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 peer-checked:text-yellow-400">
+            &#9733;
+          </label>
+          <!-- Star 1 -->
+          <input type="radio" name="experience" id="star-1" value="1" class="hidden peer" required />
+          <label for="star-1" class="text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 peer-checked:text-yellow-400">
+            &#9733;
+          </label>
+        </div>
+      </div>
 
-        <li class="question">
-            <div class="task">
-                <span class="task-title">3 :: </span>
-                <span class="task-description">Design a contact us form with all fields as required.</span>
-                <a href="/Task6/Task3.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
+      <!-- Satisfaction Table -->
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700">How satisfied are you with <span class="text-red-500">*</span> </label>
+        <div class="overflow-x-auto mt-4">
+          <table class="table-auto w-full border-collapse border border-gray-200 text-center">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="border border-gray-200 px-4 py-2"></th>
+                <th class="border border-gray-200 px-4 py-2">Very Unsatisfied</th>
+                <th class="border border-gray-200 px-4 py-2">Unsatisfied</th>
+                <th class="border border-gray-200 px-4 py-2">Neutral</th>
+                <th class="border border-gray-200 px-4 py-2">Satisfied</th>
+                <th class="border border-gray-200 px-4 py-2">Very Satisfied</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">Purchase</td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="purchase" value="1" required></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="purchase" value="2"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="purchase" value="3"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="purchase" value="4"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="purchase" value="5"></td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">Service</td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="service" value="1" required></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="service" value="2"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="service" value="3"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="service" value="4"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="service" value="5"></td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">Company Overall</td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="overall" value="1" required></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="overall" value="2"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="overall" value="3"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="overall" value="4"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="overall" value="5"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-        <li class="question">
-            <div class="task">
-                <span class="task-title">4 :: </span>
-                <span class="task-description">Use certain HTML elements to display the following in a HTML page.</span>
-                <a href="/Task6/Task4.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
+      <!-- Likelihood Table -->
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700">How likely are you to <span class="text-red-500">*</span> </label>
+        <div class="overflow-x-auto mt-4">
+          <table class="table-auto w-full border-collapse border border-gray-200 text-center">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="border border-gray-200 px-4 py-2"></th>
+                <th class="border border-gray-200 px-4 py-2">Very Unlikely</th>
+                <th class="border border-gray-200 px-4 py-2">Unlikely</th>
+                <th class="border border-gray-200 px-4 py-2">Neutral</th>
+                <th class="border border-gray-200 px-4 py-2">Likely</th>
+                <th class="border border-gray-200 px-4 py-2">Very Likely</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">Buy from us again</td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="buy_again" value="1" required></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="buy_again" value="2"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="buy_again" value="3"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="buy_again" value="4"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="buy_again" value="5"></td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">Recommend our product to others</td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="1" required></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="2"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="3"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="4"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="5"></td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">Recommend our company to others</td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="1" required></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="2"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="3"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="4"></td>
+                <td class="border border-gray-200 px-4 py-2"><input type="radio" name="recommend" value="5"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <!-- Comments Field -->
+      <div class="mb-6">
+        <label for="comments" class="block text-sm font-medium text-gray-700">Additional comments or suggestions</label>
+        <textarea id="comments" name="comments" rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your suggestions here..."></textarea>
+      </div>
 
-        <li class="question">
-            <div class="task">
-                <span class="task-title">5 :: </span>
-                <span class="task-description">Create an element that helps you to open the https://google.com in separate new tab.</span>
-                <a href="/Task6/Task5.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
-
-        <li class="question">
-            <div class="task">
-                <span class="task-title">6 :: </span>
-                <span class="task-description">In the form, add two radio buttons with grouping them for employee type (Salaried and own business).</span>
-                <a href="/Task6/Task6.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
-
-        <li class="question">
-            <div class="task">
-                <span class="task-title">7 :: </span>
-                <span class="task-description">Design form shown in the link http://evc-cit.info/cit040/formguide/card_0.png</span>
-                <a href="/Task6/Task7.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
-
-        <li class="question">
-            <div class="task">
-                <span class="task-title">8 :: </span>
-                <span class="task-description">Use the table tag to design given image Click here.</span>
-                <a href="/Task6/Task8.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
-
-        <li class="question">
-            <div class="task">
-                <span class="task-title">9 :: </span>
-                <span class="task-description">Write HTML input tags snippet to show default values for all Form elements.</span>
-                <a href="/Task6/Task9.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
-
-        <li class="question">
-            <div class="task">
-                <span class="task-title">10 :: </span>
-                <span class="task-description">In your HTML page add the below line and highlight it without using any CSS.</span>
-                <a href="/Task6/Task10.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
-
-        <li class="question">
-            <div class="task">
-                <span class="task-title">11 :: </span>
-                <span class="task-description">Create an HTML page, which should contain all types of input elements.</span>
-                <a href="/Task6/Task11.html" class="task-link" target="_blank">answer</a>
-            </div>
-        </li>
-
-    </ul>
-
+      <!-- Submit Button -->
+      <div class="flex justify-end">
+        <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">Submit</button>
+      </div>
+    </form>
+  </div>
 </body>
+
 </html>
